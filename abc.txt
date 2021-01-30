@@ -1,2 +1,196 @@
 this is github
-I want something just like this
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s
+$ git config --global user.name "Mohammadtej"
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s
+$ git cinfig --global user.email "tej.mohammad53@gmail.com"
+git: 'cinfig' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s
+$ ^C
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s
+$ git config --global user.email "tej.mohammad53@gmail.com"
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=Mohammadtej
+user.email=tej.mohammad53@gmail.com
+color.ui=true
+core.editor=emacs
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s
+$ git init
+Initialized empty Git repository in C:/Users/91709/Desktop/git_s/.git/
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        abc.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git add .
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git commit -m "this is voila!"
+[master (root-commit) b842dfe] this is voila!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 abc.txt
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git log
+commit b842dfe27cd7e2b24e3e15991817316b66dd46b2 (HEAD -> master)
+Author: Mohammadtej <tej.mohammad53@gmail.com>
+Date:   Sat Jan 30 21:52:42 2021 +0530
+
+    this is voila!
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git remote add origin https://github.com/Mohammadtej/session.git
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 229 bytes | 114.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Mohammadtej/session.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 632 bytes | 30.00 KiB/s, done.
+From https://github.com/Mohammadtej/session
+   b842dfe..70a28db  master     -> origin/master
+Updating b842dfe..70a28db
+Fast-forward
+ abc.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git log
+commit 70a28db4d12e44c6ee313392040ca4fcc67d587c (HEAD -> master, origin/master)
+Author: Mohammadtej <75032466+Mohammadtej@users.noreply.github.com>
+Date:   Sat Jan 30 22:10:43 2021 +0530
+
+    Update abc.txt
+
+commit b842dfe27cd7e2b24e3e15991817316b66dd46b2
+Author: Mohammadtej <tej.mohammad53@gmail.com>
+Date:   Sat Jan 30 21:52:42 2021 +0530
+
+    this is voila!
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git reset --mixed b842dfe27cd7e2
+Unstaged changes after reset:
+M       abc.txt
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git log
+commit b842dfe27cd7e2b24e3e15991817316b66dd46b2 (HEAD -> master)
+Author: Mohammadtej <tej.mohammad53@gmail.com>
+Date:   Sat Jan 30 21:52:42 2021 +0530
+
+    this is voila!
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git add .
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git commit -m "just learning"
+[master 1b60569] just learning
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git push
+To https://github.com/Mohammadtej/session.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Mohammadtej/session.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (master)
+$ git checkout -b me
+Switched to a new branch 'me'
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$ nano abc.txt
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$ nano abc.txt
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$ git add .
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$ git commit -m "a"
+[me a9f5d44] a
+ 1 file changed, 1 insertion(+)
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$ git push --set-upstream origin me
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 504 bytes | 100.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'me' on GitHub by visiting:
+remote:      https://github.com/Mohammadtej/session/pull/new/me
+remote:
+To https://github.com/Mohammadtej/session.git
+ * [new branch]      me -> me
+Branch 'me' set up to track remote branch 'me' from 'origin'.
+
+ZeeGadgets@DESKTOP-Q5H8D75 MINGW64 ~/Desktop/git_s (me)
+$
